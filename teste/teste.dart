@@ -1,27 +1,36 @@
+// @dart=2.9
+
 import 'dart:io';
 
 void main() {
-  while (true) {
-    String? line = stdin.readLineSync();
-    if (line == null) break;
-    int n = int.parse(line);
-    List<List<int>> matrix = List.generate(n, (_) => List.filled(n, 0));
+  int A, B, C, valor1, valor2, valor3, aux;
 
-    int size = n ~/ 3;
-    int start = size;
-    int end = n - size - 1;
-    for (int i = start; i <= end; i++) {
-      for (int j = start; j <= end; j++) {
-        if (i == j) matrix[i][j] = 2;
-        if (i + j == n - 1) matrix[i][j] = 3;
-        if (i >= start && i <= end && j >= start && j <= end) matrix[i][j] = 1;
-      }
-    }
-    matrix[n ~/ 2][n ~/ 2] = 4;
+  A = int.parse(stdin.readLineSync());
 
-    for (List<int> row in matrix) {
-      print(row.join(' '));
-    }
-    print('');
+  B = int.parse(stdin.readLineSync());
+
+  C = int.parse(stdin.readLineSync());
+
+  valor1 = A;
+  valor2 = B;
+  valor3 = C;
+
+  if (B > A) {
+    aux = A;
+    A = B;
+    A = aux;
   }
+  if (B > C) {
+    aux = C;
+    C = B;
+    B = aux;
+  }
+
+  print(A);
+  print(B);
+  print(C);
+
+  print(valor1);
+  print(valor2);
+  print(valor3);
 }
