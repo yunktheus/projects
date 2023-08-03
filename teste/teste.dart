@@ -3,13 +3,12 @@
 import 'dart:io';
 
 void main() {
-  int numero;
+  int A, B, C, media;
 
-  numero = int.parse(stdin.readLineSync());
+  A = int.parse(stdin.readLineSync());
+  B = int.parse(stdin.readLineSync());
+  C = int.parse(stdin.readLineSync());
 
-  if (numero % 2 == 0) {
-    print("O numero $numero é par");
-  } else {
-    print("O numero $numero é impar");
-  }
+  media = A + B + C;
+  print("A media dos numeros é $media");
 }
