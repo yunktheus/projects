@@ -3,12 +3,13 @@
 import 'dart:io';
 
 void main() {
-  int A, B, SOMA;
+  int numero;
 
-  A = int.parse(stdin.readLineSync());
-  B = int.parse(stdin.readLineSync());
+  numero = int.parse(stdin.readLineSync());
 
-  SOMA = A + B;
-
-  print("A soma dos inteiros eh $SOMA");
+  if (numero % 2 == 0) {
+    print("O numero $numero é par");
+  } else {
+    print("O numero $numero é impar");
+  }
 }
